@@ -108,3 +108,12 @@ hdfs dfs -get  /user/hadoop/myfile.txt  /user/Desktop/
 * Works similarly to the put command, except that the source is deleted after it's copied.
 hdfs dfs -moveFromLocal <local src>   <dest(on hdfs)> 
 ```
+
+# Yarn Logs
+```
+yarn application -list                                                 : List all running applications.
+yarn application -kill   <application_id>                              : Kill a running application.
+yarn application -status <application_id>                              : Get the status of a specific application.
+yarn application -logs   <application_id>                              : View the logs of a specific application.
+yarn logs -applicationId application_id > appID_1432041223735_0001.log : Download the logs 
+```
