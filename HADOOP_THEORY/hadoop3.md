@@ -5,6 +5,3 @@
   When Namenode doesn’t receive any heartbeat message for 10 minutes(ByDefault) from a particular Datanode then corresponding Datanode is considered Dead or failed by Namenode.
   Since blocks will be under replicated, the system starts the replication process from one Datanode to another by taking all block information from the Block report of corresponding Datanode.
   The Data for replication transfers directly from one Datanode to another without data passing through Namenode.
-
-
-![img_2.png](img_2.png)

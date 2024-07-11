@@ -14,7 +14,7 @@
 
 * Secondary Name Node (SNN)
 
-![img_6.png](img_6.png)
+![secondryNamenode.png](secondryNamenode.png)
 
 
 
@@ -22,9 +22,9 @@
 
 * Task Tracker
 
-![img_1.png](img_1.png)
+![flow1.png](flow1.png)
 
-![img.png](img.png)
+![flow2.png](flow2.png)
 
 
 # Basic operations of Namenode:

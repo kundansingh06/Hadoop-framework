@@ -2,7 +2,7 @@
 Let’s get an idea of how data flows between the client interacting with HDFS, the name node, and the data nodes with the help of a diagram. Consider the figure:
 
 # HDFS Read
-![img_4.png](img_4.png)
+![readhdfs.png](readhdfs.png)
 * Step 1: The client opens the file it wishes to read by calling open() on the File System Object(which for HDFS is an instance of Distributed File System).
 * Step 2: Distributed File System( DFS) calls the name node, using remote procedure calls (RPCs), to determine the locations of the first few blocks in the file. For each block, the name node returns the addresses of the data nodes that have a copy of that block. The DFS returns an FSDataInputStream to the client for it to read data from. FSDataInputStream in turn wraps a DFSInputStream, which manages the data node and name node I/O.
 * Step 3: The client then calls read() on the stream. DFSInputStream, which has stored the info node addresses for the primary few blocks within the file, then connects to the primary (closest) data node for the primary block in the file.
@@ -13,7 +13,7 @@ Let’s get an idea of how data flows between the client interacting with HDFS, 
 # HDFS Write
 Note: HDFS follows the Write once Read many times model. In HDFS we cannot edit the files which are already stored in HDFS, but we can append data by reopening the files.
 
-![img_5.png](img_5.png)
+![writehdfs.png](writehdfs.png)
 
 * Step 1: The client creates the file by calling create() on DistributedFileSystem(DFS).
 * Step 2: DFS makes an RPC call to the name node to create a new file in the file system’s namespace, with no blocks associated with it. The name node performs various checks to make sure the file doesn’t already exist and that the client has the right permissions to create the file. If these checks pass, the name node prepares a record of the new file; otherwise, the file can’t be created and therefore the client is thrown an error i.e. IOException. The DFS returns an FSDataOutputStream for the client to start out writing data to.
