@@ -16,6 +16,8 @@
 
 ![img_6.png](img_6.png)
 
+
+
 * Job Tracker
 
 * Task Tracker
@@ -28,9 +30,12 @@
 # Basic operations of Namenode:
 * Namenode maintains and manages the Data Nodes and assigns the task to them.
 * Namenode does not contain actual data of files.
-* Namenode stores metadata of actual data like Filename, path, number of data blocks, block IDs, block location, number of replicas and other slave related informations.
+* Namenode stores metadata of actual data like Filename, path, number of data blocks, block IDs, block location, number of replicas and other slave related informations on the local disk in the form of two files:
+  Fsimage: Fsimage stands for  File System image. It contains the complete namespace of the Hadoop file system since the NameNode creation.
+  Edit log: It contains all the recent changes performed to the file system namespace to the most recent Fsimage.
 * Namenode manages all the request(read, write) of client for actual data file.
 * Namenode executes file system name space operations like opening/closing files, renaming files and directories.
+
 
 # Basic Operations of Datanode:
 * Datanodes is responsible of storing actual data.
