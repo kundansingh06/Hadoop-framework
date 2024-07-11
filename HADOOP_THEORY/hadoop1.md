@@ -9,11 +9,16 @@
 
 # Building Blocks of Hadoop:
 * Name Node
+
 * Data Node
+
 * Secondary Name Node (SNN)
 ![img_6.png](img_6.png)
+
 * Job Tracker
+
 * Task Tracker
+
 ![img_1.png](img_1.png)
 
 ![img_3.png](img_3.png)
