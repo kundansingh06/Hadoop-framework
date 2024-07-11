@@ -12,13 +12,12 @@ Feature Of HDFS:-
  * Portable: It can easily portable from one platform to other platform
 
 # Hadoop fs vs hdfs dfs
-* hadoop fs -> it will point to any filesystem
+* hadoop fs -> it will point to any filesystem.
 
-* hdfs dfs  -> it will point hdfs only
+* hdfs dfs  -> it will point hdfs only.
 
 
 # List Files in HDFS
-
 ```
 hdfs dfs -ls                     List files in the home HDFS directory.
 hdfs dfs -ls /                   List files in the root HDFS directory.
@@ -55,4 +54,37 @@ hdfs dfs -cat /user/hadoop3/kundan.txt     This command will display the content
 
 hdfs dfs -text /hadoop/derby.log    HDFS Command that takes a source file and outputs the file in text format on the terminal. The allowed formats are zip and TextRecordInputStream.
 hdfs dfs -appendToFile /home/ubuntu/test1   /hadoop/text2 Appends the content of a local file test1 to a hdfs file test2.
+```
+
+# Disc Ussage
+```
+hdfs dfs -du /user/hadoop/        Show all individual file and amount of space(in bytes) for each individual file under directory /user/hadoop/
+hdfs dfs -du -s /user/hadoop/     Rather than showing the size of each individual file its shows the total (summary) size.
+o/p-   20189 20189  /user/hadoop
+hdfs dfs -du  -s -h /hadoop/file  Rather than showing the size of each individual file its shows the total (summary) size. Formats the sizes of files in a human-readable fashion.
+o/p-   19.7K 19.7K /user/hadoop
+
+hdfs dfs -df /user/hadoop/        Shows the capacity, free and used space of the filesystem.
+hdfs dfs -df -h /user/hadoop/     Shows the capacity, free and used space of the filesystem. -h parameter Formats the sizes of files in a human-readable fashion.
+Filesystem        Size     Used     Available  Use%
+hdfs://XXXXXXXX   305.4 T  255.2 T     50.1 T   84%
+```
+
+
+# Upload/Download Files
+```
+* copyFromLocal (or) put: To copy files/folders from local file system to hdfs store. Local filesystem means the files present on the OS.using -f option with put command will overwrite it.
+hdfs dfs -copyFromLocal /user/Desktop/AI.txt   /user/hadoop
+(OR)
+hdfs dfs -put -f       /user/Desktop/AI.txt   /user/hadoop
+
+
+* copyToLocal (or) get: To copy files/folders from hdfs store to local file system.
+hdfs dfs -copyToLocal  /user/hadoop/myfile.txt  /user/Desktop/  
+(OR)
+hdfs dfs -get   /user/hadoop/myfile.txt  /user/Desktop/
+
+
+* Works similarly to the put command, except that the source is deleted after it's copied.
+hdfs dfs -moveFromLocal <local src>   <dest(on hdfs)> 
 ```
