@@ -17,6 +17,8 @@
 
 ![img_3.png](img_3.png)
 
+![img.png](img.png)
+
 # Basic operations of Namenode:
 * Namenode maintains and manages the Data Nodes and assigns the task to them.
 * Namenode does not contain actual data of files.
