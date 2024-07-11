@@ -59,16 +59,35 @@ hdfs dfs -appendToFile /home/ubuntu/test1   /hadoop/text2 Appends the content of
 
 # Disc Usage
 ```
+*  summary of the amount of disk usage of all files/directories in the path
+hdfs dfs -du [-s] [-h] URI [URI …]
+
 hdfs dfs -du /user/hadoop/        Show all individual file and amount of space(in bytes) for each individual file under directory /user/hadoop/
 hdfs dfs -du -s /user/hadoop/     Rather than showing the size of each individual file its shows the total (summary) size.
 o/p-   20189 20189  /user/hadoop
+
+Note: hdfs dfs -dus /user/hadoop: officially deprecated in 2.6.0->dus is deprcated place of dus we should use below command
+
 hdfs dfs -du  -s -h /hadoop/file  Rather than showing the size of each individual file its shows the total (summary) size. Formats the sizes of files in a human-readable fashion.
 o/p-   19.7K 19.7K /user/hadoop
 
+
+* shows the capacity, size, and free space available on the HDFS file system.
 hdfs dfs -df /user/hadoop/        Shows the capacity, free and used space of the filesystem.
 hdfs dfs -df -h /user/hadoop/     Shows the capacity, free and used space of the filesystem. -h parameter Formats the sizes of files in a human-readable fashion.
 Filesystem        Size     Used     Available  Use%
 hdfs://XXXXXXXX   305.4 T  255.2 T     50.1 T   84%
+
+
+
+hdfs dfs -count <dir>
+-count [-q] [-h] [-v] [-t [<storage type>]] [-u] <path> 
+  Count the number of directories, files and bytes under the paths
+  that match the specified file pattern.  The output columns are:
+  DIR_COUNT FILE_COUNT CONTENT_SIZE PATHNAME
+  or, with the -q option:
+  QUOTA REM_QUOTA SPACE_QUOTA REM_SPACE_QUOTA
+        DIR_COUNT FILE_COUNT CONTENT_SIZE PATHNAME
 ```
 
 
