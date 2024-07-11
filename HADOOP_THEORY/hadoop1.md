@@ -13,13 +13,13 @@
 
 ![secondryNamenode.png](secondryNamenode.png)
 
-* Checkpoint Node:The Checkpoint node is a node that periodically creates checkpoints of the namespace. 
+* Checkpoint Node: The Checkpoint node is a node that periodically creates checkpoints of the namespace. 
 Checkpoint Node first downloads Fsimage and edits Namenode. 
 Then it merges them (Fsimage and edits) locally, and at last, it uploads the new image back to the NameNode.
 It stores the latest checkpoint in a directory that has the same structure as the Namenode’s directory. 
 This permits the checkpointed image to be always available for reading by the NameNode if necessary.
 
-* Backup Node:Backup node keeps an in-memory, up-to-date copy of the  file system namespace. It is always synchronized with the NameNode state. The Backup node checkpoint process is more efficient as it only needs to save the namespace into the local Fsimage file and reset edits. NameNode supports one Backup node at a time.
+* Backup Node: Backup node keeps an in-memory, up-to-date copy of the  file system namespace. It is always synchronized with the NameNode state. The Backup node checkpoint process is more efficient as it only needs to save the namespace into the local Fsimage file and reset edits. NameNode supports one Backup node at a time.
 
 * Data Node
 
