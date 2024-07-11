@@ -13,6 +13,7 @@
 * Data Node
 
 * Secondary Name Node (SNN)
+
 ![img_6.png](img_6.png)
 
 * Job Tracker
