@@ -13,6 +13,9 @@
 * Secondary Name Node (SNN)
 * Job Tracker
 * Task Tracker
+![img_1.png](img_1.png)
+
+![img_3.png](img_3.png)
 
 # Basic operations of Namenode:
 * Namenode maintains and manages the Data Nodes and assigns the task to them.
