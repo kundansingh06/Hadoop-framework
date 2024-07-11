@@ -4,12 +4,13 @@
 * It is designed to run on commodity(Low Cost Hardware) hardware.
 
 Feature Of HDFS:-
- * Distributed 
- * Parallel Computation 
- * Replication 
- * Fault Tolerance 
- * Streaming Data Access 
- * Portable: It can easily portable from one platform to other platform
+ * Distributed Storage & Parallel Computation :Data is stored in distributed manner i.e. various Datanodes are responsible for storing the data.
+ * Replication: HDFS provides Replication because of which no fear of Data Loss.
+ * High Availability and fault tolerance: HDFS also provides high availability and fault tolerance.
+ * Scaleup or Scaledown: Provides scalability to scaleup or scaledown nodes as per our requirement. 
+ * Portable: It can easily portable from one platform to other platform 
+ * Streaming Data Access
+
 
 # Hadoop fs vs hdfs dfs
 * hadoop fs -> it will point to any filesystem.
@@ -56,7 +57,7 @@ hdfs dfs -text /hadoop/derby.log    HDFS Command that takes a source file and ou
 hdfs dfs -appendToFile /home/ubuntu/test1   /hadoop/text2 Appends the content of a local file test1 to a hdfs file test2.
 ```
 
-# Disc Ussage
+# Disc Usage
 ```
 hdfs dfs -du /user/hadoop/        Show all individual file and amount of space(in bytes) for each individual file under directory /user/hadoop/
 hdfs dfs -du -s /user/hadoop/     Rather than showing the size of each individual file its shows the total (summary) size.
@@ -76,13 +77,13 @@ hdfs://XXXXXXXX   305.4 T  255.2 T     50.1 T   84%
 * copyFromLocal (or) put: To copy files/folders from local file system to hdfs store. Local filesystem means the files present on the OS.using -f option with put command will overwrite it.
 hdfs dfs -copyFromLocal /user/Desktop/AI.txt   /user/hadoop
 (OR)
-hdfs dfs -put -f       /user/Desktop/AI.txt   /user/hadoop
+hdfs dfs -put -f  /user/Desktop/AI.txt   /user/hadoop
 
 
 * copyToLocal (or) get: To copy files/folders from hdfs store to local file system.
 hdfs dfs -copyToLocal  /user/hadoop/myfile.txt  /user/Desktop/  
 (OR)
-hdfs dfs -get   /user/hadoop/myfile.txt  /user/Desktop/
+hdfs dfs -get  /user/hadoop/myfile.txt  /user/Desktop/
 
 
 * Works similarly to the put command, except that the source is deleted after it's copied.
