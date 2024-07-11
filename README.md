@@ -3,6 +3,7 @@
 * [2.File Read and Write in HDFS](<HADOOP_THEORY/hadoop2.md>)
 * [3.Hadoop configuration files](<HADOOP_THEORY/hadoop3.md>)
 * [4.HDFS COMMAND](<HADOOP_COMMAND/HDFS_COMMAND.md>)
+* [5.MapReduce Job Execution Flow](HADOOP_COMMAND/mapreduceExecutionFlow.md)
 
 
 * [Hadoop Question](<HADOOP_THEORY/hadoop_QUESTION.md>)
